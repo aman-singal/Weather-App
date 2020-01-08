@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cityRoute = require('./api');
+const PORT = process.env.PORT || 5555
 
 
 app.use(express.json())
@@ -26,7 +27,7 @@ app.use('/checking'  , cityRoute);
 app.use('/' , (req,res)=>{
     res.send('<h1> ::: 404 NOT FOUND ::: </h1>')
 })
-app.listen(1200, ()=>{
+app.listen(PORT, ()=>{
     console.log("Server Up and Running http://localhost:1200/");
 })
 
